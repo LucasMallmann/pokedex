@@ -58,7 +58,11 @@ const Home: NextPage<Props> = ({ pokemons: pokemonsFromBackend }) => {
         <h1 className={styles.title}>Pokedex Fatec</h1>
 
         <div className={styles.searchContainer}>
-          <Input onChange={handleTypeEvent} value={search} />
+          <Input
+            onChange={handleTypeEvent}
+            value={search}
+            placeholder="Digite o nome do pokemon"
+          />
         </div>
 
         <div className={styles.resultsContainer}>
@@ -73,7 +77,7 @@ const Home: NextPage<Props> = ({ pokemons: pokemonsFromBackend }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const pokemons = await fetchPokemons()
-  return { props: { pokemons } }
+  return { props: { pokemons }, revalidate: 1 }
 }
 
 export default Home
