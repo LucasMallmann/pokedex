@@ -37,9 +37,17 @@
 }
 
 .pokemonType {
+  margin-top: 4px;
+}
+
+.pokemonType strong {
   color: #f8f8f8;
   background: rgba(255, 255, 255, 0.2);
-  text-align: center;
-  padding: 10px;
-  margin-top: 4px;
+  padding: 6px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.pokemonType strong:not(:first-child) {
+  margin-left: 8px;
 }

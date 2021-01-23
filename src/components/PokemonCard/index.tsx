@@ -26,12 +26,16 @@ const PokemonCard: React.FC<Props> = props => {
 
   const backgroundColor: string = colorMapping[pokemon.color]
 
+  console.log(pokemon.pokemonTypes)
+
   return (
     <div className={styles.container} style={{ backgroundColor }}>
       <div className={styles.pokemonInfo}>
         <h1>{pokemon.name}</h1>
         <div className={styles.pokemonType}>
-          <span>Grass</span>
+          {pokemon.pokemonTypes.map(type => {
+            return <strong key={type.name}>{type.name}</strong>
+          })}
         </div>
       </div>
 
